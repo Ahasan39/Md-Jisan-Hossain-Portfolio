@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5EFE6"/>
+      <stop offset="1" stop-color="#E7D7C2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="80" y="80" width="110" height="110" rx="22" fill="#79543A"/>
+  <text x="135" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif"
+        font-weight="800" font-size="52" fill="#F5EFE6">JH</text>
+  <text x="80" y="300" font-family="Inter, Arial, sans-serif" font-weight="800"
+        font-size="78" fill="#30251E">Md Jisan Hossain</text>
+  <text x="80" y="370" font-family="Inter, Arial, sans-serif" font-weight="600"
+        font-size="36" fill="#79543A">Graphic Designer &amp; Digital Marketing Specialist</text>
+  <text x="80" y="430" font-family="Inter, Arial, sans-serif" font-weight="400"
+        font-size="28" fill="#6B5A4E">Social Media · Meta Ads · Branding · Video</text>
+</svg>
