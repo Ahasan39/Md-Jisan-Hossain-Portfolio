@@ -24,7 +24,10 @@ window.SITE_CONFIG = {
     facebook: "",
     instagram: "",
     linkedin: "",
-    behance: ""
+    youtube: "",
+    behance: "",
+    dribbble: "",
+    github: ""
   },
 
   // Contact form provider — Sprint 2 will wire this up.

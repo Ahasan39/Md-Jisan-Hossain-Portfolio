@@ -23,6 +23,18 @@
 
   <title>Md Jisan Hossain — Graphic Designer & Digital Marketing Specialist</title>
 
+  <!-- Flash-of-wrong-theme prevention: must run before body paints -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var sys = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = saved || (sys ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,8 +67,15 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="#home" class="brand" aria-label="Md Jisan Hossain — Home">
-        <span class="brand-mark" aria-hidden="true">JH</span>
-        <span class="brand-text">Jisan Hossain</span>
+        <img
+          src="assets/images/jisan-portrait.jpg"
+          alt="Md Jisan Hossain portrait"
+          class="brand-avatar"
+          width="44" height="44"
+          loading="eager" decoding="async"
+          onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-mark',textContent:'JH','ariaHidden':'true'}))"
+        />
+        <span class="brand-text">Md Jisan Hossain</span>
       </a>
 
       <nav class="nav" id="primaryNav" aria-label="Primary">
@@ -73,7 +92,7 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
           <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
@@ -89,7 +108,7 @@
     <!-- ========== HERO ========== -->
     <section class="section hero" id="home">
       <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text reveal">
           <p class="eyebrow">Hello, I am</p>
           <h1 class="hero-name">Md Jisan Hossain</h1>
           <p class="hero-title">Graphic Designer &amp; Digital Marketing Specialist</p>
@@ -114,7 +133,7 @@
           </ul>
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual reveal">
           <div class="portrait-frame">
             <div class="portrait-glow" aria-hidden="true"></div>
             <img
@@ -133,13 +152,13 @@
     <!-- ========== ABOUT ========== -->
     <section class="section about" id="about">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">About Me</p>
           <h2 class="section-title">A creative mind for brands that want to grow</h2>
         </header>
 
         <div class="about-grid">
-          <div class="about-copy">
+          <div class="about-copy reveal">
             <p>
               I am a passionate Graphic Designer and Digital Marketer with hands-on experience creating professional designs and effective marketing campaigns. I specialize in social media design, branding, promotional content and online marketing strategies that help businesses build a strong presence and connect with their target audience.
             </p>
@@ -154,13 +173,13 @@
             </ul>
           </div>
 
-          <aside class="about-stats" aria-label="Key stats">
+          <aside class="about-stats reveal" aria-label="Key stats">
             <div class="stat">
-              <div class="stat-value" data-count="3">3+</div>
+              <div class="stat-value" data-count-to="3" data-count-suffix="+">0</div>
               <div class="stat-label">Years of Experience</div>
             </div>
             <div class="stat">
-              <div class="stat-value" data-count="2">2</div>
+              <div class="stat-value" data-count-to="2">0</div>
               <div class="stat-label">Companies Worked With</div>
             </div>
             <div class="stat">
@@ -175,14 +194,14 @@
     <!-- ========== SERVICES ========== -->
     <section class="section services" id="services">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">What I Do</p>
           <h2 class="section-title">Services</h2>
           <p class="section-sub">Design and marketing services tailored to help your brand stand out and grow.</p>
         </header>
 
         <div class="card-grid">
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg>
             </div>
@@ -190,7 +209,7 @@
             <p>Social posts, posters, flyers and brand collateral designed in Illustrator, Photoshop and Canva Pro.</p>
           </article>
 
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             </div>
@@ -198,7 +217,7 @@
             <p>Content calendars, consistent posting and community management that grow engagement over time.</p>
           </article>
 
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9-9 9z"/><circle cx="12" cy="12" r="2"/></svg>
             </div>
@@ -206,7 +225,7 @@
             <p>Facebook and Instagram ad campaigns with audience targeting, creative testing and performance reporting.</p>
           </article>
 
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
             </div>
@@ -214,7 +233,7 @@
             <p>Short-form reels and promotional videos edited for social platforms with clean cuts and clear messaging.</p>
           </article>
 
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 20V6a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2z"/><path d="M14 4v6h6"/></svg>
             </div>
@@ -222,7 +241,7 @@
             <p>Promotional creatives, offer campaigns and brand assets that drive conversions and recall.</p>
           </article>
 
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.6L12 14.8 7.1 17.3 8 11.7 4 7.8 9.6 7z"/></svg>
             </div>
@@ -236,44 +255,57 @@
     <!-- ========== SKILLS / TOOLS ========== -->
     <section class="section skills" id="skills">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">Tools I Use</p>
           <h2 class="section-title">Skills &amp; Tools</h2>
         </header>
 
         <ul class="tool-grid" role="list">
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">Ai</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#1A1A1A;--brand-fg:#FF9A00" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.6 10.4l1 2.8h-2zM12.7 15.9h-3.4l-.8 2H6l3.8-9.6h2.4l3.8 9.6h-2.4l-.9-2zM4.615 2h14.77C20.822 2 22 3.178 22 4.615v14.77C22 20.822 20.822 22 19.385 22H4.615C3.178 22 2 20.822 2 19.385V4.615C2 3.178 3.178 2 4.615 2z"/></svg>
+            </span>
             <span class="tool-name">Adobe Illustrator</span>
           </li>
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">Ps</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#001E36;--brand-fg:#31A8FF" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.615 2h14.77C20.822 2 22 3.178 22 4.615v14.77C22 20.822 20.822 22 19.385 22H4.615C3.178 22 2 20.822 2 19.385V4.615C2 3.178 3.178 2 4.615 2zM7 7v10h2.1v-3.4h1.6c1.9 0 3.3-1.1 3.3-3.3 0-2-1.3-3.3-3.3-3.3H7zm2.1 1.8h1.5c.8 0 1.3.5 1.3 1.5s-.5 1.5-1.3 1.5H9.1V8.8zM17 10.6c-.6 0-1 .3-1 .8s.3.7 1.1.9c1.5.3 2.2.9 2.2 2.1 0 1.4-1 2.2-2.7 2.2-1 0-1.9-.3-2.5-.8V13.9c.6.4 1.5.8 2.4.8.7 0 1-.2 1-.6 0-.3-.3-.6-1.1-.8-1.5-.3-2.1-1-2.1-2.1 0-1.3 1-2.2 2.6-2.2.9 0 1.6.2 2.2.6v1.7c-.6-.4-1.4-.7-2.1-.7z"/></svg>
+            </span>
             <span class="tool-name">Adobe Photoshop</span>
           </li>
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">Cv</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#00C4CC;--brand-fg:#FFFFFF" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0zm0 3.6c3.33 0 5.35 2.08 5.35 4.96 0 2.1-1.14 3.56-2.71 4.49 1.38.63 2.18 1.85 2.18 3.44 0 2.46-2.03 4.27-5.25 4.27-3.11 0-5.47-1.86-5.47-4.64 0-1.76.98-3.14 2.56-3.8-1.49-.9-2.46-2.3-2.46-4.1C6.2 5.52 8.5 3.6 12 3.6zm0 1.9c-2 0-3.26 1.28-3.26 3.17 0 1.87 1.3 3.14 3.26 3.14 1.96 0 3.21-1.27 3.21-3.14 0-1.9-1.25-3.17-3.21-3.17zm0 8.1c-2.14 0-3.4 1.34-3.4 3.14 0 1.84 1.37 3.03 3.4 3.03 2.03 0 3.4-1.19 3.4-3.03 0-1.8-1.26-3.14-3.4-3.14z"/></svg>
+            </span>
             <span class="tool-name">Canva Pro</span>
           </li>
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">W</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#2B579A;--brand-fg:#FFFFFF" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2.5 2.5h2L10.6 13l1-4.5h1.8l1 4.5 1.1-4.5h2L15.6 15.5h-1.8l-1-4.6-1 4.6H9.9L7.5 8.5z"/></svg>
+            </span>
             <span class="tool-name">Microsoft Word</span>
           </li>
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">X</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#217346;--brand-fg:#FFFFFF" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2h3.1l1.4 2.4L13 8h3l-2.9 4L16 16h-3l-1.5-2.5L10 16H7l2.9-4L7 8z"/></svg>
+            </span>
             <span class="tool-name">Microsoft Excel</span>
           </li>
-          <li class="tool">
-            <span class="tool-badge" aria-hidden="true">P</span>
+          <li class="tool reveal">
+            <span class="tool-badge" style="--brand-bg:#B7472A;--brand-fg:#FFFFFF" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm3 2h3.6c2 0 3.2 1 3.2 2.7 0 1.8-1.3 2.8-3.3 2.8H10v2.5H8V8zm2 1.6v2.3h1.4c.9 0 1.4-.4 1.4-1.2 0-.8-.5-1.1-1.4-1.1H10z"/></svg>
+            </span>
             <span class="tool-name">Microsoft PowerPoint</span>
           </li>
         </ul>
+        <p class="skills-note">Brand marks are simplified representations of the respective product logos (Adobe, Canva, Microsoft) used only to identify the tools.</p>
       </div>
     </section>
 
     <!-- ========== PORTFOLIO ========== -->
     <section class="section portfolio" id="portfolio">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">Selected Work</p>
           <h2 class="section-title">Portfolio</h2>
           <p class="section-sub">A sample of social media designs, posters, branding and video projects.</p>
@@ -288,53 +320,53 @@
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
-          <!-- 8 placeholder items -->
-          <figure class="work" data-category="social">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Social 01</span></div>
+          <figure class="work reveal" data-category="social">
+            <button type="button" class="work-trigger" data-title="Winter Offer Campaign" data-cat="Social Media"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Social 01</span></div></button>
             <figcaption><h3>Winter Offer Campaign</h3><p>Social Media</p></figcaption>
           </figure>
-          <figure class="work" data-category="poster">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Poster 01</span></div>
+          <figure class="work reveal" data-category="poster">
+            <button type="button" class="work-trigger" data-title="Shoes Sale Flyer" data-cat="Flyer &amp; Poster"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Poster 01</span></div></button>
             <figcaption><h3>Shoes Sale Flyer</h3><p>Flyer &amp; Poster</p></figcaption>
           </figure>
-          <figure class="work" data-category="branding">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Brand 01</span></div>
+          <figure class="work reveal" data-category="branding">
+            <button type="button" class="work-trigger" data-title="Jutawala Business Card" data-cat="Branding"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Brand 01</span></div></button>
             <figcaption><h3>Jutawala Business Card</h3><p>Branding</p></figcaption>
           </figure>
-          <figure class="work" data-category="video">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Video 01</span></div>
+          <figure class="work reveal" data-category="video">
+            <button type="button" class="work-trigger" data-title="Promo Reel — Amigos" data-cat="Video"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Video 01</span></div></button>
             <figcaption><h3>Promo Reel — Amigos</h3><p>Video</p></figcaption>
           </figure>
-          <figure class="work" data-category="social">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Social 02</span></div>
+          <figure class="work reveal" data-category="social">
+            <button type="button" class="work-trigger" data-title="Weekly Content Set" data-cat="Social Media"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Social 02</span></div></button>
             <figcaption><h3>Weekly Content Set</h3><p>Social Media</p></figcaption>
           </figure>
-          <figure class="work" data-category="poster">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Poster 02</span></div>
+          <figure class="work reveal" data-category="poster">
+            <button type="button" class="work-trigger" data-title="Premium Shoes Poster" data-cat="Flyer &amp; Poster"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Poster 02</span></div></button>
             <figcaption><h3>Premium Shoes Poster</h3><p>Flyer &amp; Poster</p></figcaption>
           </figure>
-          <figure class="work" data-category="branding">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Brand 02</span></div>
+          <figure class="work reveal" data-category="branding">
+            <button type="button" class="work-trigger" data-title="Web Design Service Ad" data-cat="Branding"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Brand 02</span></div></button>
             <figcaption><h3>Web Design Service Ad</h3><p>Branding</p></figcaption>
           </figure>
-          <figure class="work" data-category="video">
-            <div class="work-media"><span class="work-placeholder" aria-hidden="true">Video 02</span></div>
+          <figure class="work reveal" data-category="video">
+            <button type="button" class="work-trigger" data-title="Product Showcase Edit" data-cat="Video"><div class="work-media"><span class="work-placeholder" aria-hidden="true">Video 02</span></div></button>
             <figcaption><h3>Product Showcase Edit</h3><p>Video</p></figcaption>
           </figure>
         </div>
+        <p class="portfolio-empty" id="portfolioEmpty" hidden>No items in this category yet.</p>
       </div>
     </section>
 
     <!-- ========== EXPERIENCE ========== -->
     <section class="section experience" id="experience">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">Where I Have Worked</p>
           <h2 class="section-title">Experience</h2>
         </header>
 
         <ol class="timeline">
-          <li class="timeline-item">
+          <li class="timeline-item reveal">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="timeline-head">
@@ -346,7 +378,7 @@
             </div>
           </li>
 
-          <li class="timeline-item">
+          <li class="timeline-item reveal">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="timeline-head">
@@ -364,24 +396,24 @@
     <!-- ========== EDUCATION ========== -->
     <section class="section education" id="education">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">Academic Background</p>
           <h2 class="section-title">Education</h2>
         </header>
 
         <div class="card-grid edu-grid">
-          <article class="card edu-card">
+          <article class="card edu-card reveal">
             <p class="edu-year">Running</p>
             <h3>Honours in Sociology</h3>
             <p>Chattagram College</p>
           </article>
-          <article class="card edu-card">
+          <article class="card edu-card reveal">
             <p class="edu-year">2019 – 2021</p>
             <h3>HSC — Humanities</h3>
             <p>Dewanhat City Corporation College</p>
             <p class="edu-gpa">GPA 5.00</p>
           </article>
-          <article class="card edu-card">
+          <article class="card edu-card reveal">
             <p class="edu-year">2019</p>
             <h3>SSC — Science</h3>
             <p>Hossenpur High School</p>
@@ -394,14 +426,14 @@
     <!-- ========== CONTACT ========== -->
     <section class="section contact" id="contact">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head reveal">
           <p class="eyebrow">Get In Touch</p>
           <h2 class="section-title">Let's work together</h2>
           <p class="section-sub">Have a project in mind? Send a message or reach out directly.</p>
         </header>
 
         <div class="contact-grid">
-          <aside class="contact-info" aria-label="Contact details">
+          <aside class="contact-info reveal" aria-label="Contact details">
             <ul>
               <li>
                 <span class="info-label">Email</span>
@@ -413,7 +445,7 @@
               </li>
               <li>
                 <span class="info-label">WhatsApp</span>
-                <a href="https://wa.me/8801822019008" rel="noopener">+880 1822-019008</a>
+                <a href="https://wa.me/8801822019008" rel="noopener noreferrer" target="_blank">+880 1822-019008</a>
               </li>
               <li>
                 <span class="info-label">Location</span>
@@ -421,24 +453,21 @@
               </li>
             </ul>
 
-            <ul class="social-row" aria-label="Social profiles">
-              <li><a href="#" aria-label="Facebook (coming soon)" class="social-link">FB</a></li>
-              <li><a href="#" aria-label="Instagram (coming soon)" class="social-link">IG</a></li>
-              <li><a href="#" aria-label="LinkedIn (coming soon)" class="social-link">IN</a></li>
-              <li><a href="#" aria-label="Behance (coming soon)" class="social-link">Be</a></li>
+            <ul class="social-row" id="socialRow" aria-label="Social profiles">
+              <!-- Rendered by main.js from config; items with no URL are hidden -->
             </ul>
           </aside>
 
-          <form class="contact-form card" id="contactForm" novalidate>
+          <form class="contact-form card reveal" id="contactForm" novalidate>
             <div class="field">
               <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
-              <input id="cf-name" name="name" type="text" required autocomplete="name" />
-              <small class="field-msg" data-for="cf-name"></small>
+              <input id="cf-name" name="name" type="text" required autocomplete="name" aria-describedby="cf-name-msg" />
+              <small class="field-msg" id="cf-name-msg" data-for="cf-name"></small>
             </div>
             <div class="field">
               <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input id="cf-email" name="email" type="email" required autocomplete="email" />
-              <small class="field-msg" data-for="cf-email"></small>
+              <input id="cf-email" name="email" type="email" required autocomplete="email" aria-describedby="cf-email-msg" />
+              <small class="field-msg" id="cf-email-msg" data-for="cf-email"></small>
             </div>
             <div class="field">
               <label for="cf-subject">Subject</label>
@@ -446,8 +475,8 @@
             </div>
             <div class="field">
               <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="cf-message" name="message" rows="5" required></textarea>
-              <small class="field-msg" data-for="cf-message"></small>
+              <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-msg"></textarea>
+              <small class="field-msg" id="cf-message-msg" data-for="cf-message"></small>
             </div>
             <div class="form-footer">
               <button type="submit" class="btn btn-primary">Send Message</button>
@@ -461,29 +490,101 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">JH</span>
-        <div>
-          <p class="footer-name">Md Jisan Hossain</p>
-          <p class="footer-tag">Graphic Designer &amp; Digital Marketer</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-profile">
+          <div class="footer-profile-head">
+            <img
+              src="assets/images/jisan-portrait.jpg"
+              alt=""
+              class="footer-avatar"
+              width="64" height="64"
+              loading="lazy" decoding="async"
+            />
+            <div>
+              <p class="footer-name">Md Jisan Hossain</p>
+              <p class="footer-tag">Graphic Designer &amp; Digital Marketer</p>
+              <p class="footer-location">Chattogram, Bangladesh</p>
+            </div>
+          </div>
+          <p class="footer-desc">Creating engaging visuals and digital experiences for brands.</p>
+          <!-- Profile social icons (Facebook, LinkedIn, YouTube).
+               Filled by js/main.js. URLs fall back to "#" placeholders
+               until real profile links are configured in js/config.js. -->
+          <ul class="social-row footer-social" id="socialRowFooter" aria-label="Social profiles"></ul>
+        </div>
+
+        <nav class="footer-col" aria-label="Quick navigation">
+          <h3 class="footer-h">Explore</h3>
+          <ul class="footer-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Services">
+          <h3 class="footer-h">Services</h3>
+          <ul class="footer-nav">
+            <li><a href="#services">Graphic Design</a></li>
+            <li><a href="#services">Social Media Marketing</a></li>
+            <li><a href="#services">Video Editing</a></li>
+            <li><a href="#services">Meta Ads Management</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col footer-contact">
+          <h3 class="footer-h">Contact</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+              </span>
+              <a href="mailto:mdjisanhossain.info327@gmail.com">mdjisanhossain.info327@gmail.com</a>
+            </li>
+            <li>
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 15.5c-1.2 0-2.4-.2-3.6-.6a1 1 0 0 0-1 .2l-2.2 2.2a15 15 0 0 1-6.6-6.6L8.8 8.5a1 1 0 0 0 .2-1A11.4 11.4 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+              </span>
+              <a href="tel:+8801822019008">+880 1822-019008</a>
+            </li>
+            <li>
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              </span>
+              <span>Chattogram, Bangladesh</span>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <ul class="footer-nav" aria-label="Footer">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <p class="footer-copy">&copy; <span id="year">2026</span> Md Jisan Hossain. All rights reserved.</p>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year">2026</span> Md Jisan Hossain. All rights reserved.</p>
+        <p class="footer-credit">Design and Developed by <a href="https://ahasan39.github.io/" target="_blank" rel="noopener noreferrer">Ahasan39</a></p>
+      </div>
     </div>
 
     <button class="to-top" id="toTop" type="button" aria-label="Back to top">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7h4v7h6v-7h4z"/></svg>
     </button>
   </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true" hidden>
+    <div class="lightbox-backdrop" data-lb-close></div>
+    <div class="lightbox-panel" role="document">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+      <div class="lightbox-media" id="lightboxMedia" aria-hidden="true"></div>
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle">Portfolio item</h3>
+        <p id="lightboxCat"></p>
+        <p class="lightbox-note">Preview placeholder — real artwork will be added when supplied by the client.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
